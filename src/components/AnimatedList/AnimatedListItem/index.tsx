@@ -27,19 +27,17 @@ export const AnimatedListItem = ({ entry }: AnimatedListItemProps) => {
         <img src={entry.logo} alt={entry.name} width={45} height={45} />
         <div className={style.content}>
           <p className={style.name}>{entry.name}</p>
+          <p className={style.meta}>{entry.details}</p>
         </div>
       </li>
     );
   }
-  console.log('entry', entry.startDate);
-
   const convertedStart = !entry.startDate
     ? ''
     : moment(entry.startDate, 'MM-DD-YYYY').utc().format('YYYY-MM-DDTHH:mm:ss.SSS[Z]');
   const convertedEnd = !entry.endDate
     ? ''
     : moment(entry.endDate, 'MM-DD-YYYY').utc().format('YYYY-MM-DDTHH:mm:ss.SSS[Z]');
-  console.log('converted', convertedStart);
   const startTime = moment(convertedStart, 'YYYY/MM/DD HH:mm');
   const endTime = moment(convertedEnd, 'YYYY/MM/DD HH:mm');
 

@@ -22,14 +22,14 @@ export default function Hero(): ReactElement {
 
   useEffect(() => {
     setWidth(document.documentElement.clientWidth);
-    window.addEventListener('resize', (e) => {
-      if (!e.target) {
-        return;
-      }
+    const handleResize = (e: Event) => {
+      if (!e.target) return;
       setWidth((e.target as Window).innerWidth);
-    });
-    return window.removeEventListener('resize', () => setWidth);
-  });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [setWidth]);
 
   const [visibleLists, setVisibleLists] = useState({
     projects: false,
@@ -44,7 +44,10 @@ export default function Hero(): ReactElement {
     <div className={clsx(style.hero, 'hero')}>
       <Name />
       <Subheading />
-      <div className={'content-wrapper'}>
+      <p className={style.pitch}>
+        I turn messy goals into shipped outcomes: faster research, cleaner decisions, and reliable execution.
+      </p>
+      <div className={style.contentWrapper}>
         <AnimatedList
           data={projects}
           isListVisible={visibleLists.projects}
@@ -55,7 +58,7 @@ export default function Hero(): ReactElement {
               history: false,
             }))
           }
-          ctaLabel={'Projects'}></AnimatedList>
+          ctaLabel={'What I Build'}></AnimatedList>
         <AnimatedList
           data={technologies}
           isListVisible={visibleLists.technologies}
@@ -66,7 +69,7 @@ export default function Hero(): ReactElement {
               history: false,
             }))
           }
-          ctaLabel={'Technologies'}></AnimatedList>
+          ctaLabel={'Core Strengths'}></AnimatedList>
         <AnimatedList
           data={getHistoryWithLatestDate()}
           isListVisible={visibleLists.history}
@@ -77,10 +80,10 @@ export default function Hero(): ReactElement {
               history: !prevState.history,
             }))
           }
-          ctaLabel={'Work History'}></AnimatedList>
+          ctaLabel={'Experience Timeline'}></AnimatedList>
 
         <Button
-          title="Contact me on LinkedIn"
+          title="Let’s Build Something"
           href="https://linkedin.com/in/Bazooka"
           extraClass={style.animateAppearance}></Button>
       </div>

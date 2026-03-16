@@ -11,7 +11,7 @@ export const workHistory: WorkHistoryItem[] = [
   {
     id: 1,
     name: 'Nebula Forge',
-    details: 'details',
+    details: 'AI Automation Engineer',
     startDate: '07-02-2025',
     endDate: '',
     logo: '/nebula_forge_logo.jpeg',
@@ -19,7 +19,7 @@ export const workHistory: WorkHistoryItem[] = [
   {
     id: 2,
     name: 'Northline Studio',
-    details: 'details',
+    details: 'Frontend + Tooling Lead',
     startDate: '07-01-2024',
     endDate: '07-02-2025',
     logo: '/northline_studio_logo.jpg',
@@ -27,7 +27,7 @@ export const workHistory: WorkHistoryItem[] = [
   {
     id: 3,
     name: 'Pixel Harbor',
-    details: 'details',
+    details: 'Product Engineer',
     startDate: '01-23-2023',
     endDate: '06-30-2024',
     logo: '/pixel_harbor_logo.jpg',
@@ -35,7 +35,7 @@ export const workHistory: WorkHistoryItem[] = [
   {
     id: 4,
     name: 'Async Orbit',
-    details: 'details',
+    details: 'Web Developer',
     startDate: '06-23-2021',
     endDate: '01-23-2023',
     logo: '/async_orbit_logo.jpg',
@@ -43,7 +43,7 @@ export const workHistory: WorkHistoryItem[] = [
   {
     id: 5,
     name: 'Launchpad FE Bootcamp',
-    details: 'details',
+    details: 'Frontend Trainee',
     startDate: '05-01-2020',
     endDate: '08-01-2020',
     logo: '/launchpad_bootcamp_logo.jpg',

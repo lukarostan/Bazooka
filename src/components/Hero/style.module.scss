@@ -1,4 +1,5 @@
 @import '../../app/globals.scss';
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -6,15 +7,23 @@
   min-width: 70vw;
 
   > * {
-    margin: 18px 0;
+    margin: 14px 0;
     z-index: 20;
   }
 }
 
-.workHistoryWrapper {
-  margin: unset;
+.pitch {
+  max-width: 760px;
+  font-size: clamp(16px, 2.2vw, 22px);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 500;
+}
+
+.contentWrapper {
   display: flex;
   flex-direction: column;
+  gap: 6px;
 }
 
 .animateAppearance {
@@ -40,5 +49,10 @@
 @media screen and (max-width: 600px) {
   .hero {
     padding: 35px 20px;
+    min-width: 100%;
+  }
+
+  .pitch {
+    font-size: 15px;
   }
 }
