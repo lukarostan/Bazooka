@@ -1,9 +1,6 @@
 import anime from 'animejs/lib/anime.es';
 import { useEffect } from 'react';
 
-import { NameMax600 } from '@/components/Animations/Name/max600';
-import { NameMax1024 } from '@/components/Animations/Name/max1024';
-import { NameMin1024 } from '@/components/Animations/Name/min1024';
 import { useDeviceWidthContext } from '@/context/DeviceWidthContext';
 
 export default function Name() {
@@ -11,24 +8,35 @@ export default function Name() {
 
   useEffect(() => {
     anime({
-      targets: '.name-anim svg path',
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeInOutSine',
-      duration: 2000,
-      delay: function (_, i) {
-        return i * 100;
-      },
-      direction: 'normal',
+      targets: '.name-anim svg text',
+      opacity: [0, 1],
+      translateY: [10, 0],
+      easing: 'easeOutCubic',
+      duration: 900,
+      delay: 150,
       loop: false,
     });
   }, []);
 
-  switch (true) {
-    case width <= 600:
-      return <NameMax600 />;
-    case width <= 1024:
-      return <NameMax1024 />;
-    default:
-      return <NameMin1024 />;
-  }
+  const fontSize = width <= 600 ? 56 : width <= 1024 ? 74 : 96;
+
+  return (
+    <div className="name-anim">
+      <svg width="100%" height="120" viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bazooka">
+        <text
+          x="50%"
+          y="62%"
+          textAnchor="middle"
+          fontSize={fontSize}
+          fontFamily="Inter, system-ui, sans-serif"
+          fontWeight="800"
+          letterSpacing="1"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2">
+          Bazooka
+        </text>
+      </svg>
+    </div>
+  );
 }
