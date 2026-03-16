@@ -81,7 +81,7 @@ export default function Hero(): ReactElement {
 
         <Button
           title="Contact me on LinkedIn"
-          href="https://linkedin.com/in/lukarostan"
+          href="https://linkedin.com/in/Bazooka"
           extraClass={style.animateAppearance}></Button>
       </div>
     </div>
