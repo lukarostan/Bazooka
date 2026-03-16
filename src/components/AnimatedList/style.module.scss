@@ -1,0 +1,52 @@
+@import '../../app/globals.scss';
+
+.workHistory {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: 0;
+  overflow: hidden;
+  margin: unset;
+  transition: all 0.3s ease-in-out;
+
+  .listContainer {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .workHistory {
+    width: calc(100vw - 80px);
+    max-width: 360px;
+    align-self: center;
+
+    .listContainer {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .workHistory {
+    width: calc(100vw - 40px);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .workHistory {
+    .listContainer {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .workHistory {
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+    .listContainer {
+      flex-direction: row;
+    }
+  }
+}

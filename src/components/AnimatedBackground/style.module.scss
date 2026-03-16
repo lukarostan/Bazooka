@@ -1,0 +1,27 @@
+@import '../../app/globals.scss';
+
+.background {
+  position: absolute;
+  inset: 0;
+  user-select: none;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  animation-name: make-opaque;
+  animation-delay: 3000ms;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .animBg {
+    opacity: 0.22;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+}

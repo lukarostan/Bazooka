@@ -1,0 +1,31 @@
+.customButton {
+  padding: 16px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(5.7px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: 'Orbitron';
+  color: #fff;
+  text-decoration: none;
+  width: fit-content;
+  margin: 6px 0;
+  display: block;
+  &.clickable {
+    user-select: unset;
+    transition: background 0.25s ease-in-out, backdrop-filter 0.25s ease-in-out, -webkit-backdrop-filter 0.25s ease-in-out, border 0.25s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.06);
+
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+
+    }
+  }
+  //todo: export to mixin
+}
