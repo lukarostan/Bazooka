@@ -19,7 +19,8 @@
   align-items: center;
 
   .animBg {
-    opacity: 0.22;
+    opacity: 0.34;
+    filter: saturate(1.15) contrast(1.05);
     object-fit: cover;
     width: 100vw;
     height: 100vh;

@@ -5,17 +5,34 @@ import { useEffect } from 'react';
 
 export default function AnimatedBackground() {
   useEffect(() => {
-    anime({
+    const lineAnimation = anime({
       targets: '.background svg g line',
-      strokeDashoffset: [anime.setDashoffset, 0.9],
-      duration: 700,
-      delay: function (_, i) {
-        return i * 10;
-      },
+      strokeDashoffset: [anime.setDashoffset, 0],
+      strokeWidth: [1.4, 2.8],
+      opacity: [0.2, 0.95],
+      easing: 'easeInOutSine',
+      duration: 1800,
+      delay: (_, i) => i * 14,
       direction: 'alternate',
       loop: true,
     });
-  });
+
+    const driftAnimation = anime({
+      targets: '.background svg',
+      translateX: [-10, 10],
+      translateY: [-8, 8],
+      scale: [1.01, 1.04],
+      easing: 'easeInOutSine',
+      duration: 12000,
+      direction: 'alternate',
+      loop: true,
+    });
+
+    return () => {
+      lineAnimation.pause();
+      driftAnimation.pause();
+    };
+  }, []);
   return (
     <div className={clsx(style.background, 'background', 'container1')}>
       <svg
@@ -27,8 +44,15 @@ export default function AnimatedBackground() {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         preserveAspectRatio="xMidYMid slice"
         viewBox="0 0 1422 800"
-        opacity="0.37">
-        <g strokeWidth="3" stroke="hsl(0, 0%, 100%)" fill="none" strokeLinecap="round">
+        opacity="0.45">
+        <defs>
+          <linearGradient id="bazooka-bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#6ee7ff" />
+            <stop offset="50%" stopColor="#8b5cf6" />
+            <stop offset="100%" stopColor="#22d3ee" />
+          </linearGradient>
+        </defs>
+        <g strokeWidth="2.4" stroke="url(#bazooka-bg-gradient)" fill="none" strokeLinecap="round">
           <line x1="0" y1="0" x2="124" y2="124" opacity="0.87"></line>
           <line x1="248" y1="0" x2="124" y2="124" opacity="0.84"></line>
           <line x1="372" y1="0" x2="248" y2="124" opacity="0.72"></line>
