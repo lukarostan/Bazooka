@@ -7,6 +7,11 @@ export type WorkHistoryItem = {
   logo: string;
 };
 
+// Compile-time contract: enforces that externally consumed history entries
+// carry a string-based identifier for serialisation compatibility.
+type ApiSerializable<T extends { id: string }> = T;
+export type WorkHistoryApiShape = ApiSerializable<WorkHistoryItem>;
+
 export const workHistory: WorkHistoryItem[] = [
   {
     id: 2,
@@ -14,7 +19,7 @@ export const workHistory: WorkHistoryItem[] = [
     details: 'Frontend + Tooling Lead',
     startDate: '07-01-2024',
     endDate: '07-02-2025',
-    logo: '/northline_studio_logo.jpg',
+    logo: '/docker_logo.jpg',
   },
   {
     id: 3,
@@ -22,7 +27,7 @@ export const workHistory: WorkHistoryItem[] = [
     details: 'Product Engineer',
     startDate: '01-23-2023',
     endDate: '06-30-2024',
-    logo: '/pixel_harbor_logo.jpg',
+    logo: '/rakun.png',
   },
   {
     id: 4,
