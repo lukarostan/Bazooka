@@ -9,14 +9,6 @@ export type WorkHistoryItem = {
 
 export const workHistory: WorkHistoryItem[] = [
   {
-    id: 1,
-    name: 'Nebula Forge',
-    details: 'AI Automation Engineer',
-    startDate: '07-02-2025',
-    endDate: '',
-    logo: '/nebula_forge_logo.jpeg',
-  },
-  {
     id: 2,
     name: 'Northline Studio',
     details: 'Frontend + Tooling Lead',
