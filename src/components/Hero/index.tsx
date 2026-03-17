@@ -84,7 +84,7 @@ export default function Hero(): ReactElement {
 
         <Button
           title="Let’s Build Something"
-          href="https://linkedin.com/in/Bazooka"
+          href="https://example.com"
           extraClass={style.animateAppearance}></Button>
       </div>
     </div>
